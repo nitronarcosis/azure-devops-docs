@@ -71,14 +71,14 @@ Private linked workspaces aren't supported today.
 
 Streams send data to Splunk via the HTTP Event Collector endpoint.
 
-1. Enable this feature in Splunk. For more information, see this [Splunk documentation](https://aka.ms/adostreamingsplunkdocumentation).
+1. Enable this feature in Splunk. For more information, see this [Splunk documentation](https://help.splunk.com/en/splunk-cloud-platform/get-data-in/get-started-with-getting-data-in/10.2.2510/get-data-with-http-event-collector/set-up-and-use-http-event-collector-in-splunk-web).
    
    Once enabled, you should have an HTTP Event Collector token and the URL to your Splunk instance. You need both the token and URL to create a Splunk stream.
 
    > [!NOTE]
    > When you're creating a new Event Collector token in Splunk, don't check “Enable indexer acknowledgment.” If it's checked, then no events flow into Splunk. You can edit the token in Splunk to remove that setting. 
 
-2. Enter your Splunk URL, which is the pointer to your Splunk instance. Ensure that you specify a port at the end of the URL. The default port is `8088`, so your URL would be similar to `https://prd-p-2k3mp2xhznbs.cloud.splunk.com:8088` or `https://prd-p-2k3mp2xhznbs.splunkcloud.com`. 
+2. Enter your Splunk URL, which is the pointer to your Splunk instance. Ensure that you specify a port at the end of the URL. The default port is `8088` for Splunk Enterprise or `443` for paid Splunk Cloud deployments. Your URL should be similar to `https://prd-p-2k3mp2xhznbs.cloud.splunk.com:8088` or `https://http-inputs-contoso.splunkcloud.com`. 
 
 3. Enter the event collector token you created into the token field. The token is stored securely within Azure DevOps and never displayed again in the UI. We recommend rotating the token regularly, which you can do by getting a new token from Splunk and editing the stream.
 
